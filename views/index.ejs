@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>To-Do List</h1>
+        <form action="/addtask" method="POST" class="task-form">
+            <input type="text" name="newtask" placeholder="Add a new task" required>
+            <button type="submit">Add Task</button>
+        </form>
+    </div>
+
+    <div class="search-container">
+        <form action="/search" method="POST" class="search-form">
+            <input type="text" name="searchQuery" placeholder="Search tasks..." required>
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+    <div class="task-container">
+        <% if (tasks.length === 0) { %>
+            <p class="no-tasks-message">No tasks added yet. Start by adding a task above.</p>
+        <% } else { %>
+            <ul>
+                <% tasks.forEach(function(task) { %>
+                    <li>
+                        <div style="flex: 1;">
+                            <%= task.task %> 
+                            <small>(<%= new Date(task.created_at).toLocaleDateString() %> at <%= new Date(task.created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) %>)</small>
+                        </div>
+                        <div style="display: flex; gap: 10px;">
+                            <form action="/deletetask" method="POST" class="inline-form">
+                                <input type="hidden" name="taskId" value="<%= task.id %>">
+                                <button type="submit">Delete</button>
+                            </form>
+                        </div>
+                    </li>
+                <% }); %>
+            </ul>
+        <% } %>
+    </div>
+
+    <div class="aside left-aside">
+        <h2>Welcome to Your To-Do List</h2>
+        <p>Manage your tasks efficiently and stay organized!</p>
+    </div>
+    <div class="aside right-aside">
+        <h2>Tips for Productivity</h2>
+        <p>Prioritize tasks and stay focused for better results!</p>
+    </div>
+</body>
+</html>
