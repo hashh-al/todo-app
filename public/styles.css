@@ -1,0 +1,166 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('/background.jpg'); /* Set the background image */
+    background-size: cover; /* Cover the entire background */
+    background-position: center; /* Center the image */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #333;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white for readability */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    margin: 50px auto 20px auto;
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.task-form {
+    display: flex; /* Use flexbox for the task form */
+    justify-content: center; /* Center align the task form */
+}
+
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+    width: 75%; /* Set consistent width */
+}
+
+input[type="text"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.search-container {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center align the search container */
+    width: 90%; /* Match width with container */
+    max-width: 600px; /* Match max-width with container */
+    margin: 20px auto; /* Center the search container */
+}
+
+.search-form {
+    display: flex; /* Use flexbox for the search form */
+    justify-content: space-between; /* Align elements with space between */
+    width: 100%; /* Make the search form take full width */
+}
+
+.search-form input[type="text"] {
+    flex: 1; /* Take the remaining space */
+    margin-right: 10px; /* Space between input and button */
+}
+
+.task-container {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white for readability */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
+    overflow-y: auto;
+    max-height: 400px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc; /* Slightly darker line */
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+form.inline-form {
+    display: flex;
+    align-items: center;
+}
+
+.no-tasks-message {
+    color: #888;
+    font-size: 16px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.aside {
+    width: 220px; /* Set a fixed width for the aside sections */
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly more opaque for contrast */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.left-aside {
+    left: 5%; /* Position to the left */
+}
+
+.right-aside {
+    right: 5%; /* Position to the right */
+}
+
+/* Add hover effects */
+.aside:hover {
+    transform: translateY(-50%) scale(1.05); /* Slightly grow on hover */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+}
+
+.aside h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+.aside p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #555;
+}
