@@ -31,9 +31,10 @@ This app uses MySQL as the database to store tasks.
 3. Create a table to store tasks:
 
    ```sql
-   CREATE TABLE tasks (
-      id INT AUTO_INCREMENT PRIMARY KEY,
-      task VARCHAR(255) NOT NULL
+   CREATE TABLE todos (
+   id INT AUTO_INCREMENT PRIMARY KEY,
+   task VARCHAR(255) NOT NULL,
+   created_at DATETIME DEFAULT CURRENT_TIMESTAMP
    );
    ```
 4. Update the MySQL connection settings in your app to match your database configuration. Make sure to add your MySQL `username`, `password`,`database name` and `localhost` settings in `app.js`.
